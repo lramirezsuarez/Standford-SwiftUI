@@ -29,33 +29,7 @@ struct BoardView: View {
                 }
             }
             .padding()
-            bottomComponent
         }
-    }
-    
-    var bottomComponent: some View {
-        HStack(alignment: .center) {
-            Spacer()
-            button(add: false)
-            Spacer(minLength: 200)
-            button(add: true)
-            Spacer()
-        }
-        .padding()
-    }
-    
-    func button(add: Bool) -> some View {
-        return Button(action: {
-            if add {
-                cards.append(.init(text: randomEmoji()))
-            } else if !cards.isEmpty {
-                cards.removeLast()
-            }
-        }, label: {
-            Image(systemName: add ? "plus.circle" : "minus.circle")
-        })
-        .font(.largeTitle)
-        .disabled(cards.isEmpty && !add)
     }
     
 }

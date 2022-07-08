@@ -15,6 +15,8 @@
 		2E92095B287747B100F0337C /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92095A287747B100F0337C /* BoardView.swift */; };
 		2E92095D2877601100F0337C /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92095C2877601100F0337C /* CardItem.swift */; };
 		2E92095F287761A700F0337C /* CardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92095E287761A700F0337C /* CardItemViewModel.swift */; };
+		2E9209612878C4DB00F0337C /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9209602878C4DB00F0337C /* MemoryGame.swift */; };
+		2E9209662878C92200F0337C /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9209652878C92200F0337C /* MemoryGameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		2E92095A287747B100F0337C /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		2E92095C2877601100F0337C /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
 		2E92095E287761A700F0337C /* CardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItemViewModel.swift; sourceTree = "<group>"; };
+		2E9209602878C4DB00F0337C /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		2E9209652878C92200F0337C /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +63,11 @@
 		2E92094928762E8700F0337C /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				2E9209642878C50000F0337C /* Models */,
+				2E9209632878C4F300F0337C /* ViewModels */,
+				2E9209622878C4E400F0337C /* Views */,
 				2E92094A28762E8700F0337C /* MemorizeApp.swift */,
-				2E92094C28762E8700F0337C /* ContentView.swift */,
-				2E92095A287747B100F0337C /* BoardView.swift */,
-				2E9209582877474300F0337C /* CardView.swift */,
-				2E92095C2877601100F0337C /* CardItem.swift */,
-				2E92095E287761A700F0337C /* CardItemViewModel.swift */,
+				2E9209602878C4DB00F0337C /* MemoryGame.swift */,
 				2E92094E28762E8700F0337C /* Assets.xcassets */,
 				2E92095028762E8700F0337C /* Preview Content */,
 			);
@@ -77,6 +80,33 @@
 				2E92095128762E8700F0337C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2E9209622878C4E400F0337C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E92094C28762E8700F0337C /* ContentView.swift */,
+				2E92095A287747B100F0337C /* BoardView.swift */,
+				2E9209582877474300F0337C /* CardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2E9209632878C4F300F0337C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2E92095E287761A700F0337C /* CardItemViewModel.swift */,
+				2E9209652878C92200F0337C /* MemoryGameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2E9209642878C50000F0337C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E92095C2877601100F0337C /* CardItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +182,11 @@
 				2E92094D28762E8700F0337C /* ContentView.swift in Sources */,
 				2E92095B287747B100F0337C /* BoardView.swift in Sources */,
 				2E92095D2877601100F0337C /* CardItem.swift in Sources */,
+				2E9209662878C92200F0337C /* MemoryGameViewModel.swift in Sources */,
 				2E92095F287761A700F0337C /* CardItemViewModel.swift in Sources */,
 				2E9209592877474300F0337C /* CardView.swift in Sources */,
 				2E92094B28762E8700F0337C /* MemorizeApp.swift in Sources */,
+				2E9209612878C4DB00F0337C /* MemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
