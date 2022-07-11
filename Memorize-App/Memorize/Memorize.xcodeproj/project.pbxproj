@@ -67,7 +67,6 @@
 				2E9209632878C4F300F0337C /* ViewModels */,
 				2E9209622878C4E400F0337C /* Views */,
 				2E92094A28762E8700F0337C /* MemorizeApp.swift */,
-				2E9209602878C4DB00F0337C /* MemoryGame.swift */,
 				2E92094E28762E8700F0337C /* Assets.xcassets */,
 				2E92095028762E8700F0337C /* Preview Content */,
 			);
@@ -105,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				2E92095C2877601100F0337C /* CardItem.swift */,
+				2E9209602878C4DB00F0337C /* MemoryGame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

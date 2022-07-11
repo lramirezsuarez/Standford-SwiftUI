@@ -7,10 +7,16 @@
 
 import SwiftUI
 
-final class MemoryGameViewModel {
-    private var model: MemoryGame<CardItemViewModel> = MemoryGame<CardItemViewModel>(numberOfPairsOfCards: 4)
+final class MemoryGameViewModel: ObservableObject {
+    @Published private var model = MemoryGame(numberOfPairsOfCards: 4)
     
     var cards: Array<CardItemViewModel> {
         return model.cards
+    }
+    
+    // MARK: Intent
+    
+    func choose(_ card: CardItemViewModel) {
+        model.choose(card)
     }
 }

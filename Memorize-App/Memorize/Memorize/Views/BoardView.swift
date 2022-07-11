@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct BoardView: View {
-    @State var cards = [
-        CardItem(text: randomEmoji()),
-        CardItem(text: randomEmoji()),
-        CardItem(text: randomEmoji()),
-        CardItem(text: randomEmoji()),
-        CardItem(text: randomEmoji())
-    ]
+    @ObservedObject var memoryGameViewModel: MemoryGameViewModel
     
     var gridItems = [GridItem(.adaptive(minimum: 100))]
     
@@ -22,9 +16,12 @@ struct BoardView: View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 10) {
-                    ForEach(cards) { cardItem in
-                        CardView(cardItem: .init(item: cardItem))
+                    ForEach(memoryGameViewModel.cards) { cardItemViewModel in
+                        CardView(cardItem: cardItemViewModel)
                             .aspectRatio(1, contentMode: .fit)
+                            .onTapGesture {
+                                memoryGameViewModel.choose(cardItemViewModel)
+                            }
                     }
                 }
             }
@@ -44,6 +41,6 @@ func randomEmoji() -> String {
 
 struct BoardView_Previews: PreviewProvider {
     static var previews: some View {
-        BoardView()
+        BoardView(memoryGameViewModel: MemoryGameViewModel())
     }
 }

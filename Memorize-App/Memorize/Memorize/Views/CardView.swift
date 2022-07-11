@@ -14,7 +14,7 @@ struct CardView: View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20)
             if cardItem.faceUp {
-                shape.fill().foregroundColor(.white)
+                shape.fill().foregroundColor(cardItem.matched ? .green : .white)
                 shape.strokeBorder(lineWidth: 3)
                 Text(cardItem.item.text)
                     .padding()
@@ -24,9 +24,6 @@ struct CardView: View {
             }
         }
         .foregroundColor(.red)
-        .onTapGesture {
-            cardItem.cardTapped()
-        }
     }
 }
 
