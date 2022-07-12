@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E376C25287DFC370064E3C9 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E376C24287DFC370064E3C9 /* AspectVGrid.swift */; };
+		2E376C27287E07180064E3C9 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E376C26287E07180064E3C9 /* Pie.swift */; };
 		2E92094B28762E8700F0337C /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92094A28762E8700F0337C /* MemorizeApp.swift */; };
 		2E92094D28762E8700F0337C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E92094C28762E8700F0337C /* ContentView.swift */; };
 		2E92094F28762E8700F0337C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E92094E28762E8700F0337C /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E376C24287DFC370064E3C9 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		2E376C26287E07180064E3C9 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		2E92094728762E8700F0337C /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E92094A28762E8700F0337C /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
 		2E92094C28762E8700F0337C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,9 +88,11 @@
 		2E9209622878C4E400F0337C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2E376C24287DFC370064E3C9 /* AspectVGrid.swift */,
 				2E92095A287747B100F0337C /* BoardView.swift */,
 				2E9209582877474300F0337C /* CardView.swift */,
 				2E92094C28762E8700F0337C /* ContentView.swift */,
+				2E376C26287E07180064E3C9 /* Pie.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E376C27287E07180064E3C9 /* Pie.swift in Sources */,
 				2E92094D28762E8700F0337C /* ContentView.swift in Sources */,
 				2E92095B287747B100F0337C /* BoardView.swift in Sources */,
 				2E92095D2877601100F0337C /* CardItem.swift in Sources */,
@@ -187,6 +194,7 @@
 				2E9209592877474300F0337C /* CardView.swift in Sources */,
 				2E92094B28762E8700F0337C /* MemorizeApp.swift in Sources */,
 				2E9209612878C4DB00F0337C /* MemoryGame.swift in Sources */,
+				2E376C25287DFC370064E3C9 /* AspectVGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

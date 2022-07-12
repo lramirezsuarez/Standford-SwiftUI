@@ -10,24 +10,35 @@ import SwiftUI
 struct BoardView: View {
     @ObservedObject var memoryGameViewModel: MemoryGameViewModel
     
-    var gridItems = [GridItem(.adaptive(minimum: 100))]
+    
     
     var body: some View {
-        VStack {
-            ScrollView {
-                LazyVGrid(columns: gridItems, spacing: 10) {
-                    ForEach(memoryGameViewModel.cards) { cardItemViewModel in
-                        CardView(cardItem: cardItemViewModel)
-                            .aspectRatio(1, contentMode: .fit)
-                            .onTapGesture {
-                                memoryGameViewModel.choose(cardItemViewModel)
-                            }
-                    }
+//        VStack {
+//            ScrollView {
+//                LazyVGrid(columns: gridItems, spacing: 10) {
+//                    ForEach(memoryGameViewModel.cards) { cardItemViewModel in
+        AspectVGrid(items: memoryGameViewModel.cards, aspectRatio: 1) { cardItemViewModel in
+            CardView(cardItem: cardItemViewModel)
+                .padding(5)
+                .onTapGesture {
+                    memoryGameViewModel.choose(cardItemViewModel)
                 }
-            }
-            .padding()
         }
+//                    }
+//                }
+//            }
+            .padding()
+//        }
     }
+    
+//    @ViewBuilder
+//    private func cardView(for card: CardItemViewModel) -> some View {
+//        CardView(cardItem: card)
+//            .padding(5)
+//            .onTapGesture {
+//                memoryGameViewModel.choose(card)
+//            }
+//    }
     
 }
 
