@@ -63,10 +63,10 @@
 		2E92094928762E8700F0337C /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				2E92094A28762E8700F0337C /* MemorizeApp.swift */,
 				2E9209642878C50000F0337C /* Models */,
 				2E9209632878C4F300F0337C /* ViewModels */,
 				2E9209622878C4E400F0337C /* Views */,
-				2E92094A28762E8700F0337C /* MemorizeApp.swift */,
 				2E92094E28762E8700F0337C /* Assets.xcassets */,
 				2E92095028762E8700F0337C /* Preview Content */,
 			);
@@ -84,9 +84,9 @@
 		2E9209622878C4E400F0337C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2E92094C28762E8700F0337C /* ContentView.swift */,
 				2E92095A287747B100F0337C /* BoardView.swift */,
 				2E9209582877474300F0337C /* CardView.swift */,
+				2E92094C28762E8700F0337C /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

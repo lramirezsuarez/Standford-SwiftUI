@@ -8,7 +8,7 @@
 import SwiftUI
 
 final class MemoryGameViewModel: ObservableObject {
-    @Published private var model = MemoryGame(numberOfPairsOfCards: 4)
+    @Published private var model = MemoryGame(numberOfPairsOfCards: 5)
     
     var cards: Array<CardItemViewModel> {
         return model.cards

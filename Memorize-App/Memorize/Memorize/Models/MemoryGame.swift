@@ -10,10 +10,17 @@ import Foundation
 struct MemoryGame {
     private(set) var cards: Array<CardItemViewModel>
     
-    private var indexOfFaceUpCard: Int?
+    private var indexOfFaceUpCard: Int? {
+        get {
+            cards.indices.filter({ cards[$0].faceUp && !cards[$0].matched }).oneAndOnly
+        }
+        set {
+            cards.indices.forEach({ cards[$0].faceUp = $0 == newValue || cards[$0].matched })
+        }
+    }
     
     init(numberOfPairsOfCards: Int) {
-        cards = Array<CardItemViewModel>()
+        cards = []
         // add numberOfPairsOfCards x 2 to cards array.
         for _ in 0..<numberOfPairsOfCards {
             let emoji = randomEmoji()
@@ -32,17 +39,21 @@ struct MemoryGame {
             return
         }
         
-        cards[chosenIndex].cardTapped()
         
         if let faceUpCardIndex = indexOfFaceUpCard {
             if cards[chosenIndex].item.text == cards[faceUpCardIndex].item.text {
                 cards[chosenIndex].matched = true
                 cards[faceUpCardIndex].matched = true
             }
-            indexOfFaceUpCard = nil
+            cards[chosenIndex].cardTapped()
         } else {
-            cards.forEach { $0.faceUp = $0.id == cards[chosenIndex].id || $0.matched }
             indexOfFaceUpCard = chosenIndex
         }
+    }
+}
+
+extension Array {
+    var oneAndOnly: Element? {
+        return self.count == 1 ? first : nil
     }
 }

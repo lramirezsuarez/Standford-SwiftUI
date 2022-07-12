@@ -8,6 +8,6 @@
 import Foundation
 
 struct CardItem: Identifiable {
-    var id = UUID()
-    var text: String
+    let id = UUID()
+    let text: String
 }
