@@ -15,7 +15,7 @@ struct MemoryGame {
             cards.indices.filter({ cards[$0].faceUp && !cards[$0].matched }).oneAndOnly
         }
         set {
-            cards.indices.forEach({ cards[$0].faceUp = $0 == newValue || cards[$0].matched })
+            cards.indices.forEach({ cards[$0].faceUp = $0 == newValue /*|| cards[$0].matched*/ })
         }
     }
     
@@ -28,8 +28,6 @@ struct MemoryGame {
                                  CardItemViewModel(item: .init(text: emoji))]
             cards.append(contentsOf: cardsToAppend)
         }
-        
-        cards.shuffle()
     }
     
     mutating func choose(_ card: CardItemViewModel) {
@@ -49,6 +47,10 @@ struct MemoryGame {
         } else {
             indexOfFaceUpCard = chosenIndex
         }
+    }
+    
+    mutating func shuffle() {
+        cards.shuffle()
     }
 }
 

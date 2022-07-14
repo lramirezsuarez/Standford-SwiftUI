@@ -9,23 +9,35 @@ import SwiftUI
 
 struct CardView: View {
     @ObservedObject var cardItem: CardItemViewModel
+    @State private var animateBonusRemaining: Double = 0
     
     var body: some View {
         GeometryReader { geoReader in
             ZStack {
-                Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 110-90))
-                    .foregroundColor(.orange)
-                    .opacity(DrawingConstants.circleOpacity)
-                    .padding(DrawingConstants.circlePadding)
+                Group {
+                    if cardItem.isConsumingBonusTime {
+                        Pie(startAngle: Angle(degrees: 0 - 90), endAngle: Angle(degrees: (1 - animateBonusRemaining) * 360 - 90))
+                            .onAppear {
+                                animateBonusRemaining = cardItem.bonusRemaining
+                                withAnimation(.linear(duration: cardItem.bonusTimeRemaining)) {
+                                    animateBonusRemaining = 0
+                                }
+                            }
+                    } else {
+                        Pie(startAngle: Angle(degrees: 0 - 90), endAngle: Angle(degrees: (1 - cardItem.bonusRemaining) * 360 - 90))
+                    }
+                }
+                .foregroundStyle(Gradient(colors: [.red, .orange, .green]))
+                .opacity(DrawingConstants.circleOpacity)
+                .padding(DrawingConstants.circlePadding)
                 Text(cardItem.item.text)
                     .padding()
                     .rotationEffect(Angle.degrees(cardItem.matched ? 360 : 0))
-                    .animation(.linear(duration: 2).repeatForever(autoreverses: false))
+//                    .animation(.linear(duration: 2).repeatForever(autoreverses: false))
                     .font(.system(size: DrawingConstants.fontSize))
                     .scaleEffect(scale(thatFits: geoReader.size))
             }
-            .cardify(faceUp: cardItem.faceUp, matched: cardItem.matched)
-            .foregroundColor(.red)
+            .cardify(faceUp: cardItem.faceUp)
         }
     }
     

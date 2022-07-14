@@ -19,4 +19,12 @@ final class MemoryGameViewModel: ObservableObject {
     func choose(_ card: CardItemViewModel) {
         model.choose(card)
     }
+    
+    func shuffle() {
+        model.shuffle()
+    }
+    
+    func restart() {
+        model = MemoryGame(numberOfPairsOfCards: 5)
+    }
 }
