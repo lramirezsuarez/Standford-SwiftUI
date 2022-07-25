@@ -56,6 +56,9 @@ struct EmojiArtDocumentView: View {
                     break
                 }
             }
+            .onReceive(document.$backgroundImage) { image in
+                zoomToFit(image, in: geometry.size)
+            }
         }
     }
     
@@ -98,7 +101,9 @@ struct EmojiArtDocumentView: View {
     
     private func convertToEmojiCoordinates(_ location: CGPoint, in geometry: GeometryProxy) -> (x: Int, y: Int) {
         let center = geometry.frame(in: .local).center
-        let location = CGPoint(x: (location.x - panOffset.width - center.x) * zoomScale, y: (location.y - panOffset.height - center.y) * zoomScale)
+        let location = CGPoint(
+            x: (location.x - panOffset.width - center.x) / zoomScale,
+            y: (location.y - panOffset.height - center.y) / zoomScale)
         return (Int(location.x), Int(location.y))
     }
     
@@ -143,7 +148,7 @@ struct EmojiArtDocumentView: View {
     
     private func zoomGesture() -> some Gesture {
         MagnificationGesture()
-            .updating($gestureZoomScale) { latestGestureScale, gestureZoomScale, transaction in
+            .updating($gestureZoomScale) { latestGestureScale, gestureZoomScale, _ in
                 gestureZoomScale = latestGestureScale
             }
             .onEnded { gestureScaleAtEnd in
