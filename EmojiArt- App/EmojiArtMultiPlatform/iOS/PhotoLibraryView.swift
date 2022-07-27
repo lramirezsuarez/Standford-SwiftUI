@@ -9,14 +9,14 @@ import SwiftUI
 import PhotosUI
 
 struct PhotoLibraryView: UIViewControllerRepresentable {
-    var handlePickedImage: (UIImage?) -> Void
+    var handlePickerImage: (UIImage?) -> Void
     
     static var isAvailable: Bool {
         return true
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(handlePickedImage: handlePickedImage)
+        Coordinator(handlePickedImage: handlePickerImage)
     }
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
